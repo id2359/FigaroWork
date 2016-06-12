@@ -4,7 +4,7 @@ import com.cra.figaro.algorithm.sampling._
 
 object HelloWorldTest {
   def main(args: Array[String]) {
-      val helloWorldElement = Constant("Hello world!")
+      val helloWorldElement = Select(0.8 ->"Hello world!", 0.2->"Goodbye world!")
       val sampleHelloWorld = Importance(1000, helloWorldElement)
       
       sampleHelloWorld.start()
@@ -12,6 +12,8 @@ object HelloWorldTest {
       println(sampleHelloWorld.probability(helloWorldElement, "Hello world!"))
       println("Probability of Goodbye world:")
       println(sampleHelloWorld.probability(helloWorldElement, "Goodbye world!"))
+
+      
 
 
   }
